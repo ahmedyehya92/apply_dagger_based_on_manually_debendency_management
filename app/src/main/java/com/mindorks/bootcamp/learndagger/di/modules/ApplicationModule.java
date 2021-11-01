@@ -51,10 +51,10 @@ public class ApplicationModule {
         return new NetworkService(application, "abc");
     }*/
 
-    @Singleton
+   /* @Singleton
     @Provides
     DatabaseService provideDatabaseService()
     {
         return new DatabaseService(application, "database", 1);
-    }
+    }*/
 }
