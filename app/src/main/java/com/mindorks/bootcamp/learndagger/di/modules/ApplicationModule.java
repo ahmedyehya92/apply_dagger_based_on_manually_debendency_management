@@ -45,6 +45,9 @@ public class ApplicationModule {
         return "api";
     }
 
+    @Provides
+    Integer provideDatabaseVersion() {return 1;}
+
   /*  @Singleton
     @Provides
     NetworkService provideNetworkService() {
