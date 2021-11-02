@@ -2,12 +2,11 @@ package com.mindorks.bootcamp.learndagger.di.modules;
 
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 
-import com.mindorks.bootcamp.learndagger.MyApplication;
-import com.mindorks.bootcamp.learndagger.data.local.DatabaseService;
-import com.mindorks.bootcamp.learndagger.data.remote.NetworkService;
-import com.mindorks.bootcamp.learndagger.ui.MainViewModel;
+import com.mindorks.bootcamp.learndagger.di.qualifiers.ActivityContext;
+import com.mindorks.bootcamp.learndagger.ui.home.HomeFragment;
 
 import dagger.Module;
 import dagger.Provides;
@@ -25,6 +24,7 @@ public class ActivityModule {
         this.activity = activity;
     }
 
+    @ActivityContext
     @Provides
     Context provideContext() {
         return activity;

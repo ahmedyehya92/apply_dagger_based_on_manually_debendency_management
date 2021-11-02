@@ -5,6 +5,7 @@ import android.content.Context;
 import com.mindorks.bootcamp.learndagger.MyApplication;
 import com.mindorks.bootcamp.learndagger.data.local.DatabaseService;
 import com.mindorks.bootcamp.learndagger.data.remote.NetworkService;
+import com.mindorks.bootcamp.learndagger.di.qualifiers.ApplicationContext;
 import com.mindorks.bootcamp.learndagger.di.qualifiers.DatabaseInfo;
 import com.mindorks.bootcamp.learndagger.di.qualifiers.NetworkInfo;
 
@@ -28,6 +29,7 @@ public class ApplicationModule {
         this.application = application;
     }
 
+    @ApplicationContext
     @Provides
     Context provideContext(){
         return application;
@@ -44,6 +46,10 @@ public class ApplicationModule {
     String provideApiKey(){
         return "api";
     }
+
+    @DatabaseInfo
+    @Provides
+    Integer provideDatabaseVersion() {return 1;}
 
   /*  @Singleton
     @Provides

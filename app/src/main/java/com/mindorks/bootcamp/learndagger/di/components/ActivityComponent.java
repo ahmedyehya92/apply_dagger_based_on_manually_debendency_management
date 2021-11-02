@@ -1,8 +1,10 @@
 package com.mindorks.bootcamp.learndagger.di.components;
 
+import android.content.Context;
+
 import com.mindorks.bootcamp.learndagger.di.modules.ActivityModule;
 import com.mindorks.bootcamp.learndagger.di.scopes.ActivityScope;
-import com.mindorks.bootcamp.learndagger.ui.MainActivity;
+import com.mindorks.bootcamp.learndagger.ui.main.MainActivity;
 
 import dagger.Component;
 
@@ -13,6 +15,8 @@ import dagger.Component;
  *****/
 @ActivityScope
 @Component(dependencies = {ApplicationComponent.class}, modules = ActivityModule.class)
-public interface MainActivityComponent {
+public interface ActivityComponent {
+
     void inject(MainActivity mainActivity);
+
 }

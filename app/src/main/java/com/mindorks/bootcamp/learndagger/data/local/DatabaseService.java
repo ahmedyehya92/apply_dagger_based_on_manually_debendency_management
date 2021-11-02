@@ -2,6 +2,7 @@ package com.mindorks.bootcamp.learndagger.data.local;
 
 import android.content.Context;
 
+import com.mindorks.bootcamp.learndagger.di.qualifiers.ApplicationContext;
 import com.mindorks.bootcamp.learndagger.di.qualifiers.DatabaseInfo;
 
 import javax.inject.Inject;
@@ -18,7 +19,7 @@ public class DatabaseService {
     private int version;
 
     @Inject
-    public DatabaseService(Context context, @DatabaseInfo String databaseName, int version) {
+    public DatabaseService(@ApplicationContext Context context, @DatabaseInfo String databaseName, @DatabaseInfo int version) {
         // do the initialisation here
         this.context = context;
         this.databaseName = databaseName;

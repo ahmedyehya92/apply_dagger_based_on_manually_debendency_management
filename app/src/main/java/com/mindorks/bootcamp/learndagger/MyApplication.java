@@ -8,6 +8,7 @@ import com.mindorks.bootcamp.learndagger.data.remote.NetworkService;
 import com.mindorks.bootcamp.learndagger.di.components.ApplicationComponent;
 import com.mindorks.bootcamp.learndagger.di.components.DaggerApplicationComponent;
 import com.mindorks.bootcamp.learndagger.di.modules.ApplicationModule;
+import com.mindorks.bootcamp.learndagger.utils.NetworkHelper;
 
 import javax.inject.Inject;
 
@@ -17,6 +18,9 @@ public class MyApplication extends Application {
     public NetworkService networkService;
     @Inject
     public DatabaseService databaseService;
+
+    @Inject
+    public NetworkHelper networkHelper;
 
     public ApplicationComponent applicationComponent;
 
@@ -29,6 +33,7 @@ public class MyApplication extends Application {
 
         applicationComponent.inject(this);
 
-        Log.d("DEBUG", networkService.toString());
+        Log.d("DEBUGMyApplication", networkHelper.isNetworkConnected().toString());
+        networkHelper.isNetworkConnected();
     }
 }
