@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 .build()
                 .inject(this);
 
+
         TextView tvData = findViewById(R.id.tvData);
         tvData.setText(viewModel.getSomeData());
 
